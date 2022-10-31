@@ -12,23 +12,23 @@
 
 
 
-const writePPrescription={
+const writePrescription={
     presc:function(){
-    console.log('Writing Pres')
+    console.log('Writing prescriptions to people.')
     }
     
 }
 
 const collectCash={
     collect:function(){
-    console.log('Collecting Cash')
+    console.log('Collecting Cash.')
     }
     
 }
 
 const retunCash={
     returnCash:function(){
-    console.log('Returning Cash')
+    console.log('Returning Cash to pharmacy')
     }
     
 }
@@ -46,10 +46,11 @@ function mixin(...args){
 }
 manager = mixin(collectCash,retunCash,ManageEmployees)
 cashier= mixin(collectCash,retunCash)
+pharmacist = mixin(writePrescription)
 console.log(manager);
-console.log(cas);
-// console.log(pharmacist);
-// console.log(cashier);
+console.log(cashier);
+console.log(pharmacist.presc());
+
 
 
 
